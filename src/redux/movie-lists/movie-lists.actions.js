@@ -52,3 +52,14 @@ export const deleteMovie = (movie) => {
     payload: movie,
   };
 };
+
+/* Action to sort the view by property  and order*/
+export const sortMovieList = (property, order) => {
+  return {
+    type: movieListTypes.SORT_MOVIES,
+    payload: {
+      property,
+      order,
+    },
+  };
+};

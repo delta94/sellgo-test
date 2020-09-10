@@ -1,7 +1,7 @@
 import movieListTypes from "./movie-lists.types";
 
 /* Utility Functions */
-import { removeMovieFromList } from "./movie-lists.utils";
+import { removeMovieFromList, sortMoviesBy } from "./movie-lists.utils";
 
 const INTIAL_STATE = {
   movieList: [],
@@ -32,10 +32,18 @@ const movieListReducer = (state = INTIAL_STATE, action = {}) => {
         error: action.payload,
       };
     }
+
     case movieListTypes.DELETE_MOVIE: {
       return {
         ...state,
         movieList: removeMovieFromList(state.movieList, action.payload),
+      };
+    }
+
+    case movieListTypes.SORT_MOVIES: {
+      return {
+        ...state,
+        movieList: sortMoviesBy(state.movieList, action.payload),
       };
     }
     default: {

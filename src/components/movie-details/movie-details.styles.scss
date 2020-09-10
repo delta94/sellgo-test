@@ -1,7 +1,6 @@
 @import "../../sass/main";
 
-td,
-th {
+td {
   border: 1px solid $gray-100;
   text-align: left;
   padding: 8px;
@@ -11,7 +10,4 @@ th {
     height: 15px;
     cursor: pointer;
   }
-}
-th {
-  font-size: 1.7rem;
 }

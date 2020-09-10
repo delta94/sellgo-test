@@ -8,5 +8,23 @@
     font-family: "Roboto", sans-serif;
     border-collapse: collapse;
     width: 100%;
+    th {
+      font-size: 1.7rem;
+      border: 1px solid $gray-100;
+      text-align: left;
+      padding: 8px;
+    }
+  }
+}
+
+.sort__arrows {
+  margin-left: 1rem;
+  display: inline;
+  span {
+    cursor: pointer;
+    font-size: 1.3rem;
+    &:hover {
+      color: $blue-100;
+    }
   }
 }
