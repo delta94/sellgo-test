@@ -1,0 +1,13 @@
+@import "../../sass/main";
+
+.movies__list {
+  width: 80%;
+  margin: 2rem auto;
+
+  table {
+    font-family: "Roboto", sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../sass/main";
+
+.searchbox {
+  width: 50%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 2rem;
+  &__input {
+    width: 80%;
+    padding: 1rem 2rem;
+    font-family: "Roboto", sans-serif;
+    border: 1px solid $black;
+  }
+  &__submit {
+    border: none;
+    outline: none;
+    background: $blue-100;
+    color: $white;
+    width: 15%;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    &:hover {
+      background: rgba($blue-100, 0.8);
+    }
+  }
+}
