@@ -22,6 +22,17 @@ const App = ({ fetchMovieList }) => {
       <div className="u-container">
         <SearchBox />
         <MoviesList />
+        <p>
+          Submitted by
+          <a
+            href="https://github.com/abhu-A-J"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Abhushan A. Joshi
+          </a>
+        </p>
       </div>
     </div>
   );

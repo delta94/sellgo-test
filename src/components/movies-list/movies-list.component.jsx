@@ -44,11 +44,13 @@ const MoviesList = ({ movieList, sortMovies }) => {
         </thead>
 
         <tbody>
-          {movieList.length
-            ? movieList.map((movie) => {
-                return <MovieDetails key={movie.imdbID} displayData={movie} />;
-              })
-            : null}
+          {movieList.length ? (
+            movieList.map((movie) => {
+              return <MovieDetails key={movie.imdbID} displayData={movie} />;
+            })
+          ) : (
+            <p className="empty__message">Oops! Empty list</p>
+          )}
         </tbody>
       </table>
     </div>

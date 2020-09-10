@@ -3,6 +3,9 @@
 .movies__list {
   width: 80%;
   margin: 2rem auto;
+  @media only screen and(max-width:1200px) {
+    width: 100%;
+  }
 
   table {
     font-family: "Roboto", sans-serif;
@@ -27,4 +30,10 @@
       color: $blue-100;
     }
   }
+}
+
+.empty__message {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 3rem;
 }

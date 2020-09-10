@@ -21,8 +21,5 @@ export const sortMoviesBy = (movieList, { property, order }) => {
     return 0;
   });
 
-  console.log(movieList);
-
-  console.log(result);
-  return [...movieList];
+  return [...result];
 };

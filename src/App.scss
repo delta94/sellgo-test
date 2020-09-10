@@ -1,1 +1,13 @@
 @import "./sass/main";
+
+p {
+  text-align: right;
+  font-size: 1.2rem;
+  margin: 2rem;
+  a {
+    color: $coral;
+    &:hover {
+      color: rgba($coral, 0.6);
+    }
+  }
+}
