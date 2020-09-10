@@ -1,7 +1,7 @@
 import movieListTypes from "./movie-lists.types";
 
 /* Utility Functions */
-// import { getMovieDetails } from "./movie-lists.utils";
+import { removeMovieFromList } from "./movie-lists.utils";
 
 const INTIAL_STATE = {
   movieList: [],
@@ -30,6 +30,12 @@ const movieListReducer = (state = INTIAL_STATE, action = {}) => {
         ...state,
         isFetching: false,
         error: action.payload,
+      };
+    }
+    case movieListTypes.DELETE_MOVIE: {
+      return {
+        ...state,
+        movieList: removeMovieFromList(state.movieList, action.payload),
       };
     }
     default: {

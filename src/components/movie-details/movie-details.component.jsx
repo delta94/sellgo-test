@@ -1,4 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+
+/* Actions */
+import { deleteMovie } from "../../redux/movie-lists/movie-lists.actions";
 
 /* Styling */
 import "./movie-details.styles.scss";
@@ -6,7 +10,7 @@ import "./movie-details.styles.scss";
 /* Assets */
 import trashcan from "../../asset/trashcan.svg";
 
-const MovieDetails = ({ displayData }) => {
+const MovieDetails = ({ displayData, removeMovie }) => {
   const { Title, Year, imdbID } = displayData;
   return (
     <tr>
@@ -14,10 +18,20 @@ const MovieDetails = ({ displayData }) => {
       <td>{Year}</td>
       <td>{imdbID}</td>
       <td>
-        <img src={trashcan} alt="Trash Can" />
+        <img
+          src={trashcan}
+          alt="Trash Can"
+          onClick={() => removeMovie(displayData)}
+        />
       </td>
     </tr>
   );
 };
 
-export default MovieDetails;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeMovie: (movie) => dispatch(deleteMovie(movie)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(MovieDetails);

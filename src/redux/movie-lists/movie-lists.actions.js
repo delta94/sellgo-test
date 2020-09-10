@@ -44,3 +44,11 @@ export const fetchMovies = (title = "") => {
       });
   };
 };
+
+/* Action to delete the movie from table list */
+export const deleteMovie = (movie) => {
+  return {
+    type: movieListTypes.DELETE_MOVIE,
+    payload: movie,
+  };
+};

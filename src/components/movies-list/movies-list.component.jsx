@@ -25,7 +25,7 @@ const MoviesList = ({ movieList }) => {
         <tbody>
           {movieList.length
             ? movieList.map((movie) => {
-                return <MovieDetails key={movie.id} displayData={movie} />;
+                return <MovieDetails key={movie.imdbID} displayData={movie} />;
               })
             : null}
         </tbody>
