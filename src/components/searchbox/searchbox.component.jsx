@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+
+/* Actions */
+import { fetchMovies } from "../../redux/movie-lists/movie-lists.actions";
 
 /* Styling */
 import "./searchbox.styles.scss";
 
-const SearchBox = () => {
+const SearchBox = ({ fetchMovies }) => {
   const [searchField, setSearchField] = useState("");
 
   const handleSubmit = () => {
     console.log("Making API Request to" + searchField);
+    fetchMovies(searchField);
+    setSearchField("");
   };
 
   return (
@@ -27,4 +33,10 @@ const SearchBox = () => {
   );
 };
 
-export default SearchBox;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchMovies: (title) => dispatch(fetchMovies(title)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SearchBox);

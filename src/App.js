@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
 /* Child Components */
 import SearchBox from "./components/searchbox/searchbox.component";
 import MoviesList from "./components/movies-list/movies-list.component";
 
+/* Actions */
+import { fetchMovies } from "./redux/movie-lists/movie-lists.actions";
+
 /* Styling */
 import "./App.scss";
 
-function App() {
+const App = ({ fetchMovieList }) => {
+  /* Fetch the movies list for initial default render*/
+  useEffect(() => {
+    fetchMovieList();
+  }, [fetchMovieList]);
+
   return (
     <div className="app">
       <div className="u-container">
@@ -16,6 +25,12 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchMovieList: (movieTitle) => dispatch(fetchMovies(movieTitle)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);

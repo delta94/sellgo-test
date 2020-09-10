@@ -3,13 +3,19 @@ import React from "react";
 /* Styling */
 import "./movie-details.styles.scss";
 
-const MovieDetails = () => {
+/* Assets */
+import trashcan from "../../asset/trashcan.svg";
+
+const MovieDetails = ({ displayData }) => {
+  const { Title, Year, imdbID } = displayData;
   return (
     <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Delete</td>
+      <td>{Title}</td>
+      <td>{Year}</td>
+      <td>{imdbID}</td>
+      <td>
+        <img src={trashcan} alt="Trash Can" />
+      </td>
     </tr>
   );
 };
